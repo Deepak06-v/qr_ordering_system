@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * The only hand-written CSS in the project. Everything visual is a Tailwind
+ * utility in the component; what lives here is what Tailwind cannot express:
+ * the safe-area custom properties and the two scroll/overflow behaviours the
+ * bottom sheet needs.
+ */
+
+@layer base {
+  :root {
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+    /* Height of the header row (h-12), so the category rail can pin below it. */
+    --header-h: 3rem;
+    /* Height reserved so the sticky cart never covers the last menu card. */
+    --cart-reserve: 0px;
+  }
+
+  html {
+    background-color: theme('colors.canvas');
+    /* Reserve the notch without ever letting a header scroll under it. */
+    scroll-padding-top: calc(var(--safe-top) + 8px);
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    /* A dark auditorium means overscroll must never flash white. */
+    overscroll-behavior-y: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One-handed use: no accidental text selection or tap highlight while scrolling. */
+  button,
+  [role='button'] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-crimson ring-offset-2 ring-offset-canvas;
+  }
+
+  /* Respect the customer's motion preference. Everything is decorative. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Horizontal chip rails: momentum scroll, no visible scrollbar. */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pt-safe {
+    padding-top: var(--safe-top);
+  }
+  .pb-safe {
+    padding-bottom: var(--safe-bottom);
+  }
+  .px-safe {
+    padding-left: var(--safe-left);
+    padding-right: var(--safe-right);
+  }
+  .bottom-safe {
+    bottom: var(--safe-bottom);
+  }
+
+  /* Menu bottom padding = floating cart height + breathing room + home indicator. */
+  .pb-cart-reserve {
+    padding-bottom: calc(var(--cart-reserve) + var(--safe-bottom) + 20px);
+  }
+
+  /* Tabular figures so prices do not jitter while the quantity changes. */
+  .nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+
+  .pin-tracking {
+    letter-spacing: 0.22em;
+  }
+}

@@ -1,0 +1,27 @@
+# Root
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tsbuildinfo
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/coverage/
+frontend/*.local
+
+# Backend
+backend/node_modules/
+backend/dist/
+backend/coverage/
+backend/generated/qr/*
+!backend/generated/qr/.gitkeep
+backend/*.log

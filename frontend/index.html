@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Order food and have it delivered straight to your cinema seat." />
+    <!-- QR-only utility: never index individual seat URLs. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Order to your seat</title>
+    <style>
+      /* Paint the cinema black before any CSS or JS arrives. Without this the
+         customer sees a white flash in a dark auditorium. */
+      html,
+      body,
+      #root {
+        min-height: 100%;
+        background: #000;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 32px; color: #fff; font-family: sans-serif">
+        JavaScript is required to order. Please enable it, or ask a member of staff for
+        assistance.
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
