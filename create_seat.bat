@@ -1,0 +1,1 @@
+curl.exe -X POST https://thriving-courtesy-production-bb2e.up.railway.app/api/seat-hashes -H "Content-Type: application/json" -d "{\"theaterId\":\"6abea3677502273b79c189ad\",\"screenNumber\":4,\"seatNumber\":\"G3\"}"

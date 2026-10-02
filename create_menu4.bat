@@ -1,0 +1,1 @@
+curl.exe -X POST https://thriving-courtesy-production-bb2e.up.railway.app/api/menu -H "Content-Type: application/json" -d "{\"name\":\"Coke\",\"category\":\"DRINKS\",\"description\":\"Chilled Coca-Cola, served ice cold.\",\"price\":15000,\"isAvailable\":true,\"displayOrder\":0,\"theaterId\":\"6abea3677502273b79c189ad\"}"

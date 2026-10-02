@@ -1,0 +1,1 @@
+curl.exe -X POST https://thriving-courtesy-production-bb2e.up.railway.app/api/menu -H "Content-Type: application/json" -d "{\"name\":\"Large Popcorn\",\"category\":\"POPCORN\",\"description\":\"Freshly popped salted popcorn, perfect for movie night.\",\"price\":35000,\"isAvailable\":true,\"displayOrder\":0,\"theaterId\":\"6abea3677502273b79c189ad\"}"

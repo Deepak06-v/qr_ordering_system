@@ -1,0 +1,1 @@
+curl.exe -X PATCH https://thriving-courtesy-production-bb2e.up.railway.app/api/menu/items/6abea4077502273b79c189b9 -H "Content-Type: application/json" -d "{\"imageUrl\":\"https://frontend-wine-eight-40.vercel.app/images/products/nachos.jpg\"}"

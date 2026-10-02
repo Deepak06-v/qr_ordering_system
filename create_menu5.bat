@@ -1,0 +1,1 @@
+curl.exe -X POST https://thriving-courtesy-production-bb2e.up.railway.app/api/menu -H "Content-Type: application/json" -d "{\"name\":\"Pepsi\",\"category\":\"DRINKS\",\"description\":\"Refreshing chilled Pepsi.\",\"price\":15000,\"isAvailable\":true,\"displayOrder\":1,\"theaterId\":\"6abea3677502273b79c189ad\"}"

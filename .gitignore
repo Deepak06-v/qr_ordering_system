@@ -25,3 +25,4 @@ backend/coverage/
 backend/generated/qr/*
 !backend/generated/qr/.gitkeep
 backend/*.log
+.vercel

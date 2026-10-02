@@ -1,0 +1,1 @@
+curl.exe -X POST https://thriving-courtesy-production-bb2e.up.railway.app/api/menu -H "Content-Type: application/json" -d "{\"name\":\"Medium Popcorn\",\"category\":\"POPCORN\",\"description\":\"Classic buttery popcorn in a medium size.\",\"price\":25000,\"isAvailable\":true,\"displayOrder\":1,\"theaterId\":\"6abea3677502273b79c189ad\"}"

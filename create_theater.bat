@@ -1,0 +1,1 @@
+curl.exe -X POST https://thriving-courtesy-production-bb2e.up.railway.app/api/theaters -H "Content-Type: application/json" -d "{\"name\":\"PVR IMAX\",\"city\":\"Mumbai\",\"timezone\":\"Asia/Kolkata\"}"

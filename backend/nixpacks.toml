@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-20"]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "node dist/src/server.js"
